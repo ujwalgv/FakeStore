@@ -5,26 +5,24 @@ import com.project.ecommerce.models.Product;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Getter
 @Setter
-public class FakeStorePostResponse {
+public class FakeStorePostResponseDTO {
     private String id;
-    private String name;
-    private String description;
+    private String title;
     private Double price;
-    private String imgUrl;
+    private String description;
+    private String image;
     private String category;
 
-    public Product toProduct(FakeStorePostResponse fakeStoreGetResponse){
+    public Product toProduct(FakeStorePostResponseDTO fakeStoreGetResponse){
 
             Product responseProduct = new Product();
             responseProduct.setId(fakeStoreGetResponse.getId());
-            responseProduct.setName(fakeStoreGetResponse.getName());
+            responseProduct.setTitle(fakeStoreGetResponse.getTitle());
             responseProduct.setPrice(fakeStoreGetResponse.getPrice()*1.0);
             responseProduct.setDescription(fakeStoreGetResponse.getDescription());
+            responseProduct.setImage(fakeStoreGetResponse.getImage());
             Category responseCategory = new Category();
             responseCategory.setName(fakeStoreGetResponse.getCategory());
             responseProduct.setCategory(responseCategory);
