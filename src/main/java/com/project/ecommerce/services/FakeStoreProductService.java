@@ -136,9 +136,5 @@ public class FakeStoreProductService implements ProductService{
 
         return allProducts;
     }
-
-    public List<Product> searchProducts(String text) {
-        return null;
-    }
 }
 
